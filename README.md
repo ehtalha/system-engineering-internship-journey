@@ -193,34 +193,33 @@ I will continuously update this repository with technical notes, practical exper
 
 Example topics include:
 
+Server 
+├── Dell PowerEdge 
+├── iDRAC 
+├── RAID 
+└── Server Health Check 
 
-Server
-├── Dell PowerEdge
-├── iDRAC
-├── RAID
-└── Server Health Check
+Networking 
+├── OSI Model 
+├── TCP/IP 
+├── VLAN 
+├── Routing 
+└── Troubleshooting 
 
-Networking
-├── OSI Model
-├── TCP/IP
-├── VLAN
-├── Routing
-└── Troubleshooting
+Linux 
+├── Commands 
+├── Users & Groups 
+├── Permissions 
+└── Services 
 
-Linux
-├── Commands
-├── Users & Groups
-├── Permissions
-└── Services
+Storage 
+├── SAN 
+├── NAS 
+└── Storage Management 
 
-Storage
-├── SAN
-├── NAS
-└── Storage Management
-
-Backup
-├── Veeam
-├── Veritas NetBackup
+Backup 
+├── Veeam 
+├── Veritas NetBackup 
 └── Disaster Recovery
 
 
