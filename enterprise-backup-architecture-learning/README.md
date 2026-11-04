@@ -31,7 +31,7 @@ No prior backup experience is assumed.
 | # | Module | Topics | Status |
 |---|--------|--------|--------|
 | 01 | [Three-Tier Enterprise Backup Topology](./01-three-tier-backup-topology/) | Master/Media/Client roles, control vs. data plane, database-to-storage data flow | Available |
-| 02 | [Network Topologies & Data Paths](./02-network-topologies-data-paths/) | LAN (NBD), SAN / LAN-free, HotAdd for VMs, side-by-side pipeline maps | Planned |
+| 02 | [Network Topologies & Data Paths](./02-network-topologies-data-paths/) | LAN (NBD), SAN / LAN-free, HotAdd for VMs, side-by-side pipeline maps | Available |
 | 03 | [Storage Targets & Deduplication](./03-storage-targets-deduplication/) | Source-side vs. target-side dedupe, hash/segment-DB workflow, SSD / dedupe appliances / cloud object / tape | Planned |
 | 04 | [Zero-Trust & Immutable Air-Gap Architectures](./04-immutable-air-gap-architectures/) | WORM, logical vs. physical air-gap, ransomware boundary diagrams | Planned |
 | 05 | [Vendor Architecture Comparisons](./05-vendor-architecture-comparisons/) | Traditional (Veritas NetBackup + Appliances) vs. scale-out (Rubrik / Cohesity) | Planned |
@@ -56,7 +56,7 @@ enterprise-backup-architecture/
 │   └── README.md
 ├── 06-architecture-challenges/
 │   └── README.md
-└── glossary.md            (optional: terms used across modules)
+└── glossary.md            
 ```
 
 Each module folder contains one `README.md` with the lesson, diagrams, and review questions. Add extra files (cheat sheets, lab notes, whiteboard photos) next to it as you go.
