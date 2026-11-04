@@ -156,8 +156,8 @@ Every module `README.md` follows the same structure:
 **Emdadul Haque Talha**
 BSc in Computer Science and Engineering | Intern Engineer, System/Server Team, Express Systems Limited
 
-- GitHub: `https://github.com/ehtalha`
-- LinkedIn: `https://www.linkedin.com/in/emdadul-haque-talha-606939276?utm_source=share_via&utm_content=profile&utm_medium=member_android`
+- GitHub: https://github.com/ehtalha
+- LinkedIn: https://www.linkedin.com/in/emdadul-haque-talha-606939276?utm_source=share_via&utm_content=profile&utm_medium=member_android
 
 ---
 
