@@ -196,7 +196,27 @@ All three start the same way: the master instructs the backup software, which as
 1. A company runs VMware on **vSAN** and wants the fastest possible backups with minimal impact on the production LAN. Which transport mode would you choose and why? Explain why SAN mode is not available.
 2. Your backup jobs for VMs on a Fibre Channel SAN are running much slower than expected, and the job logs show the **NBD** mode was used. What does this tell you, and what would you check?
 
+## Answers
+
+1. Which transport mode suits VMware on vSAN with minimal production LAN impact, and why is SAN mode unavailable?
+
+HotAdd is the appropriate choice.
+
+SAN mode requires the backup proxy to access a physical storage LUN directly. vSAN pools the local storage of the ESXi hosts and exposes no external LUN, so SAN mode cannot be used.
+In HotAdd mode, the snapshot disks of the source VM are attached to a proxy VM as virtual SCSI disks. The proxy reads them inside the host through the hypervisor storage stack, so no network is used for the read and the production LAN is not affected.
+Deploy a proxy VM on each host or cluster and add more proxies to scale.
+Send the proxy-to-target traffic over a dedicated backup network or VLAN, and use deduplication to reduce the volume written.
+
+2. Backup jobs for VMs on a Fibre Channel SAN run slowly and the logs show NBD mode. What does this indicate and what should be checked?
+NBD mode means the data is being read through the ESXi host over the network, which is slower and loads both the host and the network. On an FC SAN, SAN mode should normally be used, so this indicates that SAN mode failed and the job silently fell back to NBD.
 ---
+Items to check:
+ 1.	The proxy can see the datastore LUNs (FC zoning and array LUN masking)
+ 2. The proxy is a physical (or SAN-connected) server, as virtual proxies generally cannot use SAN mode
+ 3. The datastore type supports SAN mode (VMFS on block storage; not NFS, vSAN, or VVol in some products)
+ 4. The transport mode order or a forced NBD setting in the job or proxy configuration
+ 5. The job log for the SAN failure message that preceded the fallback
+ 6.	DNS resolution between the backup server, ESXi hosts, and vCenter
 
 ## Navigation
 
